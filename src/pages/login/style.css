@@ -38,13 +38,22 @@ body {
 }
 
 .logo {
-    width: 150px!important;
-    height: 150px;
-    padding: 5px;
+    width: 150px !important;
+    height: 150px !important;
+    padding: 0;
     border-radius: 50%;
     margin-bottom: 10%;
+    box-shadow: 0 1px 13px 3px #333;
 }
 
+.login-button {
+    background-color: #00e0e2;
+    border-color: #00e0e2;
+    color: #222;
+    font-size: 25px;
+    box-shadow: 0 1px 13px 3px #1a4f50;
+    text-shadow: #444 1px 1px 15px;
+}
 
 
 .b-form {

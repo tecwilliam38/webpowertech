@@ -1,16 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LoginScreen from './pages/login'
+import HomeScreen from './pages/home'
+
+
+import ProtectedRoute from './constants/protectedRoute'
+import PublicRoute from './constants/publicRoute'
 
 function App() {
- return(<BrowserRouter>
-  <Routes>
-    <Route path='/' element={<LoginScreen/>}/>
-  </Routes>
- </BrowserRouter>
+  return (<BrowserRouter>
+    <Routes>
+      {/* <Route path='/' element={<LoginScreen/>}/>    
+    <Route path='/home' element={<HomeScreen/>}/>     */}
+      <Route
+        path="/"
+        element={
+          <PublicRoute>
+            <LoginScreen />
+          </PublicRoute>
+        }
+      />
+      {/* <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          /> */}
+
+
+
+      <Route
+        path="/home"
+        element={
+          <ProtectedRoute>
+            <HomeScreen />
+          </ProtectedRoute>
+        }
+      />
+
+    </Routes>
+  </BrowserRouter>
   )
 }
 
